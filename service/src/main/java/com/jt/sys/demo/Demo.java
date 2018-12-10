@@ -32,7 +32,7 @@ public class Demo {
     JsonResult Check( @RequestBody  Map mao) {
         System.out.println( mao);
         Map map=new HashMap<>();
-        map.put("b",dao.finnews());
+        map.put("c",dao.finnews());
 
 
 
