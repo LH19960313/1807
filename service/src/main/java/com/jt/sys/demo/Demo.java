@@ -35,13 +35,10 @@ public class Demo {
         map.put("sss",dao.finnews());
         return new JsonResult(map);
     }
-
     @PostMapping(value = "test" )
     JsonResult test(@RequestHeader() String token) {
         String result="本次访问的服务是"+port;
         result += "token:"+token;
         return new JsonResult(result);
-
-
     }
 }
