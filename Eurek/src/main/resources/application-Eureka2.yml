@@ -1,0 +1,22 @@
+server:
+   port: 11112
+eureka:
+   instance:
+        hostname: Eureka2
+        instance-id: ${eureka.instance.hostname}:${server.port}
+   client:
+        #注册中心高可用需要下列2个设置为true
+        registerWithEureka: true
+        fetchRegistry: true
+        serviceUrl:
+            defaultZone: http://users:password123@Eureka1:11111/eureka/,http://users:password123@Eureka3:11113/eureka/
+   server:
+      peer-node-read-timeout-ms: 5000
+
+spring:
+  security:
+    basic:
+      enabled: true
+    user:
+      name: users
+      password: password123

@@ -1,0 +1,40 @@
+eureka:
+   client:
+     instance:
+           instance-id: ${spring.application.name}:${server.port}
+     serviceUrl:
+       defaultZone: http://users:password123@Eureka1:11111/eureka/,http://users:password123@Eureka2:11112/eureka/,http://users:password123@Eureka3:11113/eureka/
+server:
+    port: 8081
+mybatis:
+     #type-aliases-package: com.jt.sys.entity  #实体包 扫描后可以在mapper中 使用小写列名作为别名
+     #type-handlers-package: com.example.typehandler
+     #mapper-locations: classpath:mapper/sys/*.xml  #扫描mapper文件
+     configuration:
+         map-underscore-to-camel-case: true #启用驼峰命名
+         default-fetch-size: 100   #连接数量
+         default-statement-timeout: 30  #默认超时时间
+spring:
+     application:
+          name: webService
+      #数据源配置
+     datasource:
+         type: com.alibaba.druid.pool.DruidDataSource #连接池
+         driver-class-name: com.mysql.jdbc.Driver  #驱动
+         url: jdbc:mysql://localhost:3306/jtsys   #地址
+         username: root   #用户
+         password: admin  #密码
+         #以下配置作用不明 省略
+        #filters: stat
+        #maxActive: 20
+        #initialSize: 1
+        #maxWait: 60000
+        #minIdle: 1
+        #timeBetweenEvictionRunsMillis: 60000
+        #minEvictableIdleTimeMillis: 300000
+        #validationQuery: select 'x'
+        #testWhileIdle: true
+        #testOnBorrow: false
+        #testOnReturn: false
+        #poolPreparedStatements: true
+        #maxOpenPreparedStatements: 20
