@@ -32,14 +32,8 @@ public class Demo {
     JsonResult Check( @RequestBody  Map mao) {
         System.out.println( mao);
         Map map=new HashMap<>();
-        map.put("c",dao.finnews());
-
-
-
+        map.put("sss",dao.finnews());
         return new JsonResult(map);
-
-
-
     }
 
     @PostMapping(value = "test" )
