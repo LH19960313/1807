@@ -12,7 +12,7 @@ import java.util.Map;
 public class DemoTest {
     @Autowired
     FoundServiceProvideUser serviceProvideUser;
-    @RequestMapping("s")
+    @RequestMapping("s")//Test
     @ResponseBody
     public JsonResult Demo1(@RequestParam  HashMap map) {
         map.put("s",2);
