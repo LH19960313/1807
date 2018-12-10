@@ -25,7 +25,7 @@ public class Demo {
         }*/
             System.out.println(bodyJson);
             Map map=new HashMap<>();
-            map.put("s",dao.finnews());
+            map.put("a",dao.finnews());
             return new JsonResult(map);
     }
     @PostMapping(value = "/"+"my" )
